@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syntacc — TTS checkpoint listening console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b23; --panel-2:#1b212b; --line:#293141;
+    --ink:#e7ebf2; --muted:#8b96a8; --faint:#5a6577;
+    --gt:#f0b429;            /* ground-truth signal gold */
+    --gt-dim:#4a3d12;
+    --model:#57d9c6;         /* model signal teal */
+    --model-dim:#12332f;
+    --accent-sp:#7aa2ff;     /* São Paulo */
+    --accent-re:#f2789c;     /* Recife */
+    --radius:10px;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:"Space Grotesk",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--sans); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--model)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* ---- Header / console readout ---- */
+  header.console{
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(120% 140% at 100% 0%, rgba(87,217,198,.06), transparent 60%),
+      var(--panel);
+  }
+  .console-inner{padding:34px 0 26px}
+  .title-line{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  h1{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-.02em;margin:0}
+  .subtitle{color:var(--muted);font-size:15px;margin:8px 0 0;max-width:62ch}
+  .status-dot{width:9px;height:9px;border-radius:50%;background:var(--model);
+    box-shadow:0 0 0 4px var(--model-dim);display:inline-block}
+  .mode-tag{font-family:var(--mono);font-size:11px;color:var(--faint);
+    border:1px solid var(--line);padding:3px 8px;border-radius:6px}
+
+  /* readout strip */
+  .readout{display:flex;flex-wrap:wrap;gap:0;margin-top:24px;
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel-2)}
+  .readout .cell{flex:1 1 150px;padding:14px 18px;border-right:1px solid var(--line)}
+  .readout .cell:last-child{border-right:0}
+  .readout .k{font-family:var(--mono);font-size:11px;color:var(--faint);text-transform:none;letter-spacing:.02em}
+  .readout .v{font-family:var(--mono);font-size:22px;font-weight:700;margin-top:2px}
+  .readout .v small{font-size:12px;font-weight:400;color:var(--muted)}
+
+  /* ---- Model / dataset spec panel ---- */
+  details.specs{margin-top:18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel-2)}
+  details.specs>summary{cursor:pointer;list-style:none;padding:14px 18px;
+    font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+  details.specs>summary::-webkit-details-marker{display:none}
+  details.specs>summary .chev{transition:transform .2s}
+  details.specs[open]>summary .chev{transform:rotate(90deg)}
+  .specs-body{padding:4px 18px 18px}
+  .spec-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px}
+  .spec-table th,.spec-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .spec-table th{color:var(--faint);font-weight:500}
+  .spec-table td:first-child{color:var(--ink);font-weight:500}
+  .spec-note{color:var(--muted);font-family:var(--sans);font-size:13px;margin:14px 0 0}
+
+  /* ---- Controls ---- */
+  .controls{position:sticky;top:0;z-index:20;background:rgba(14,17,22,.85);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .controls-inner{display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:14px 0}
+  .search{flex:1 1 240px;min-width:200px;position:relative}
+  .search input{width:100%;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    font-family:var(--sans);font-size:14px;padding:10px 12px 10px 34px;border-radius:8px}
+  .search input:focus{outline:2px solid var(--model);outline-offset:0;border-color:transparent}
+  .search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.5}
+  select{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    font-family:var(--sans);font-size:14px;padding:10px 12px;border-radius:8px}
+  select:focus{outline:2px solid var(--model)}
+  .toggles{display:flex;gap:8px;flex-wrap:wrap}
+  .dd{position:relative}
+  .dd-btn{font-family:var(--mono);font-size:12px;padding:9px 12px;border-radius:8px;
+    border:1px solid var(--line);background:var(--panel-2);color:var(--muted);cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px}
+  .dd-btn .cnt{color:var(--faint)}
+  .dd-btn .swatch{width:9px;height:9px;border-radius:2px;background:var(--faint)}
+  .dd-btn[data-active="true"]{color:var(--ink);border-color:var(--model)}
+  .dd-btn[data-active="true"] .swatch{background:var(--model)}
+  .dd-btn .caret{transition:transform .15s;opacity:.7}
+  .dd.open .dd-btn .caret{transform:rotate(180deg)}
+  .dd-btn:focus-visible{outline:2px solid var(--model);outline-offset:1px}
+  .dd-panel{position:absolute;top:calc(100% + 6px);left:0;z-index:40;min-width:210px;
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);padding:6px;display:none}
+  .dd.open .dd-panel{display:block}
+  .dd-quick{display:flex;gap:6px;padding:4px 4px 8px;border-bottom:1px solid var(--line);margin-bottom:4px}
+  .dd-quick button{flex:1;font-family:var(--mono);font-size:11px;color:var(--muted);
+    background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:6px;cursor:pointer}
+  .dd-quick button:hover{color:var(--ink);border-color:var(--model)}
+  .opt{display:flex;align-items:center;gap:10px;padding:8px 8px;border-radius:6px;cursor:pointer;
+    font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .opt:hover{background:var(--panel-2)}
+  .opt[data-on="true"]{color:var(--ink)}
+  .opt input{accent-color:var(--model);width:15px;height:15px;cursor:pointer;margin:0}
+  .opt .steps{margin-left:auto;color:var(--faint);font-size:11px}
+  .count{font-family:var(--mono);font-size:12px;color:var(--faint);margin-left:auto}
+
+  /* ---- Cards ---- */
+  main{padding:26px 0 80px}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  .card{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden;
+    display:flex;flex-direction:column}
+  .card-head{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .acc-badge{font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:5px;white-space:nowrap}
+  .acc-sao_paulo{color:var(--accent-sp);background:rgba(122,162,255,.12)}
+  .acc-recife{color:var(--accent-re);background:rgba(242,120,156,.12)}
+  .stem{font-family:var(--mono);font-size:11.5px;color:var(--faint);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .caption{padding:14px 16px 6px;font-size:15px;color:var(--ink)}
+  .caption .q{color:var(--faint)}
+  .players{padding:8px 16px 16px;display:flex;flex-direction:column;gap:10px}
+
+  .row{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+  .tag{font-family:var(--mono);font-size:11px;padding:5px 9px;border-radius:6px;
+    display:flex;flex-direction:column;gap:1px;min-width:96px;line-height:1.25}
+  .tag .lbl{font-weight:700}
+  .tag .sub{color:var(--muted);font-weight:400}
+  .row.gt .tag{background:var(--gt-dim);color:var(--gt);border:1px solid rgba(240,180,41,.3)}
+  .row.model .tag{background:var(--model-dim);color:var(--model);border:1px solid rgba(87,217,198,.25)}
+  .row.gt{border-top:1px dashed var(--gt-dim);padding-top:10px;margin-top:2px}
+  audio{width:100%;height:38px}
+  .row.gt audio{filter:sepia(.35) saturate(1.3) hue-rotate(-18deg)}
+  .missing{font-family:var(--mono);font-size:12px;color:var(--faint);
+    border:1px dashed var(--line);border-radius:8px;padding:9px 12px;text-align:center}
+
+  .empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)}
+  .empty code{font-family:var(--mono);color:var(--model);background:var(--panel-2);padding:2px 6px;border-radius:4px}
+
+  footer{border-top:1px solid var(--line);color:var(--faint);font-size:12px;
+    font-family:var(--mono);padding:20px 0}
+  .demo-banner{background:var(--gt-dim);color:var(--gt);font-family:var(--mono);font-size:12.5px;
+    padding:9px 0;text-align:center;border-bottom:1px solid rgba(240,180,41,.3)}
+  .demo-banner code{background:rgba(0,0,0,.25);padding:1px 6px;border-radius:4px}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div id="demoBanner" class="demo-banner" hidden>
+  Demo mode — no <code>gallery.json</code> found. Showing generated sample tones. Deploy alongside a real <code>gallery.json</code> to load your audio.
+</div>
+
+<header class="console">
+  <div class="wrap console-inner">
+    <div class="title-line">
+      <span class="status-dot" aria-hidden="true"></span>
+      <h1 id="pageTitle">Syntacc listening console</h1>
+      <span class="mode-tag" id="modeTag">loading…</span>
+    </div>
+    <p class="subtitle" id="pageSubtitle">Ground truth vs. model inference across training checkpoints. Press play on any row — only one clip plays at a time so you can A/B directly.</p>
+
+    <div class="readout" id="readout"></div>
+    <details class="specs" id="specs">
+      <summary><span>Models &amp; dataset — hardware, steps, hours</span><span class="chev">›</span></summary>
+      <div class="specs-body" id="specsBody"></div>
+    </details>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap controls-inner">
+    <label class="search" aria-label="Search captions or filenames">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="q" type="search" placeholder="Search caption or filename…" autocomplete="off">
+    </label>
+    <select id="accentFilter" aria-label="Filter by accent">
+      <option value="">All accents</option>
+    </select>
+    <div class="toggles" id="variantToggles" aria-label="Show or hide models"></div>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="wrap">
+  <span id="footerText"></span>
+</footer>
+
+<script>
+/* =========================================================================
+   Config
+   ========================================================================= */
+const MANIFEST_URL = "gallery.json";  // produced by build_gallery.py
+const AUDIO_BASE   = "";               // set if wavs live in a subfolder, e.g. "audio/"
+
+/* =========================================================================
+   Audio manager — one clip at a time
+   ========================================================================= */
+let currentAudio = null;
+function wireAudio(el){
+  el.preload = "none";
+  el.addEventListener("play", () => {
+    if (currentAudio && currentAudio !== el) currentAudio.pause();
+    currentAudio = el;
+  });
+}
+
+/* =========================================================================
+   Load manifest, or fall back to a self-demoing dataset
+   ========================================================================= */
+async function loadData(){
+  try{
+    const res = await fetch(MANIFEST_URL, {cache:"no-store"});
+    if(!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    return {data, demo:false};
+  }catch(e){
+    return {data: buildDemo(), demo:true};
+  }
+}
+
+function fmtSteps(n){
+  if(n == null) return "";
+  if(n >= 1000) return (n/1000).toFixed(n%1000?1:0).replace(/\.0$/,"") + "K steps";
+  return n + " steps";
+}
+
+/* =========================================================================
+   Render
+   ========================================================================= */
+let STATE = {data:null, activeVariants:new Set(), accent:"", q:""};
+
+function render(data){
+  STATE.data = data;
+  const variants = data.variants || [];
+  STATE.activeVariants = new Set(variants.map(v=>v.id));
+
+  // header text
+  if(data.title) document.getElementById("pageTitle").textContent = data.title;
+  if(data.subtitle) document.getElementById("pageSubtitle").textContent = data.subtitle;
+
+  // readout strip
+  const ds = data.dataset || {};
+  const accents = [...new Set((data.samples||[]).map(s=>s.accent))].filter(Boolean);
+  const readout = [
+    ["samples", (data.samples||[]).length],
+    ["models", variants.length],
+    ["accents", accents.length ? `${accents.length} <small>${accents.join(" · ")}</small>` : "—"],
+    ["hours", ds.hours != null ? `${ds.hours}<small> h</small>` : "—"],
+    ["language", ds.language ? `<small>${ds.language}</small>` : "—"],
+  ];
+  document.getElementById("readout").innerHTML = readout.map(([k,v])=>
+    `<div class="cell"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
+
+  renderSpecs(data);
+  renderControls(data);
+  renderGrid();
+
+  document.getElementById("footerText").textContent =
+    `generated ${data.generated_at || "—"} · ${(data.samples||[]).length} samples × ${variants.length} model variants`;
+}
+
+function renderSpecs(data){
+  const variants = data.variants || [];
+  const meta = data.models_meta || {};
+  const rows = variants.map(v=>{
+    const m = meta[v.model] || meta[v.id] || {};
+    return `<tr>
+      <td>${v.label || v.id}</td>
+      <td>${fmtSteps(v.steps) || "—"}</td>
+      <td>${v.server || "—"}</td>
+      <td>${m.gpu || "—"}</td>
+      <td>${m.ram || "—"}</td>
+      <td>${m.cpu || "—"}</td>
+    </tr>`;
+  }).join("");
+  const ds = data.dataset || {};
+  const dsNote = [ds.name, ds.language, (ds.accents||[]).join("/"), ds.hours!=null?`${ds.hours}h`:null, ds.notes]
+    .filter(Boolean).join(" · ");
+  document.getElementById("specsBody").innerHTML = `
+    <table class="spec-table">
+      <thead><tr><th>model variant</th><th>checkpoint</th><th>server</th><th>gpu</th><th>ram</th><th>cpu</th></tr></thead>
+      <tbody>${rows || `<tr><td colspan="6">no variants</td></tr>`}</tbody>
+    </table>
+    ${dsNote ? `<p class="spec-note"><strong>Dataset:</strong> ${dsNote}</p>` : ""}`;
+}
+
+function renderControls(data){
+  const variants = data.variants || [];
+  // accent filter
+  const sel = document.getElementById("accentFilter");
+  const accents = [...new Set((data.samples||[]).map(s=>s.accent))].filter(Boolean).sort();
+  sel.innerHTML = `<option value="">All accents</option>` +
+    accents.map(a=>`<option value="${a}">${a.replace(/_/g," ")}</option>`).join("");
+  sel.onchange = e=>{STATE.accent=e.target.value; renderGrid();};
+
+  // variant toggles — one checkbox dropdown per model, checkpoints inside
+  const box = document.getElementById("variantToggles");
+  box.innerHTML = "";
+  const groups = {};
+  for(const v of variants){ (groups[v.model] ||= []).push(v); }
+
+  for(const model of Object.keys(groups)){
+    const list = groups[model].slice().sort((a,b)=>(a.steps||0)-(b.steps||0));
+    const dd = document.createElement("div");
+    dd.className = "dd";
+    dd.innerHTML = `
+      <button class="dd-btn" type="button" aria-expanded="false" aria-haspopup="true">
+        <span class="swatch"></span>${model}<span class="cnt"></span>
+        <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dd-panel" role="group" aria-label="${model} checkpoints">
+        <div class="dd-quick">
+          <button type="button" data-all>All</button>
+          <button type="button" data-none>None</button>
+        </div>
+        ${list.map(v=>`
+          <label class="opt" data-on="true">
+            <input type="checkbox" checked value="${v.id}">
+            <span>${fmtSteps(v.steps) || v.server || v.id}</span>
+          </label>`).join("")}
+      </div>`;
+    box.appendChild(dd);
+
+    const btn = dd.querySelector(".dd-btn");
+    const inputs = [...dd.querySelectorAll(".opt input")];
+    const refresh = ()=>{
+      const on = inputs.filter(i=>i.checked).length;
+      dd.querySelector(".cnt").textContent = `${on}/${inputs.length}`;
+      btn.dataset.active = on > 0 ? "true" : "false";
+      inputs.forEach(i=> i.closest(".opt").dataset.on = i.checked);
+    };
+    refresh();
+
+    btn.addEventListener("click", e=>{
+      e.stopPropagation();
+      const open = dd.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open);
+      document.querySelectorAll(".dd.open").forEach(o=>{
+        if(o!==dd){ o.classList.remove("open"); o.querySelector(".dd-btn").setAttribute("aria-expanded","false"); }
+      });
+    });
+    dd.querySelector(".dd-panel").addEventListener("click", e=> e.stopPropagation());
+
+    inputs.forEach(inp=> inp.addEventListener("change", ()=>{
+      if(inp.checked) STATE.activeVariants.add(inp.value);
+      else STATE.activeVariants.delete(inp.value);
+      refresh(); renderGrid();
+    }));
+    dd.querySelector("[data-all]").addEventListener("click", ()=>{
+      inputs.forEach(i=>{ i.checked=true; STATE.activeVariants.add(i.value); });
+      refresh(); renderGrid();
+    });
+    dd.querySelector("[data-none]").addEventListener("click", ()=>{
+      inputs.forEach(i=>{ i.checked=false; STATE.activeVariants.delete(i.value); });
+      refresh(); renderGrid();
+    });
+  }
+
+  document.getElementById("q").oninput = e=>{STATE.q=e.target.value.toLowerCase().trim(); renderGrid();};
+}
+
+function matchFilters(s){
+  if(STATE.accent && s.accent !== STATE.accent) return false;
+  if(STATE.q){
+    const hay = ((s.caption||"") + " " + (s.stem||"")).toLowerCase();
+    if(!hay.includes(STATE.q)) return false;
+  }
+  return true;
+}
+
+function audioTag(src){
+  const el = document.createElement("audio");
+  el.controls = true;
+  el.src = src;
+  wireAudio(el);
+  return el;
+}
+
+function renderGrid(){
+  const data = STATE.data;
+  const variants = (data.variants||[]).filter(v=>STATE.activeVariants.has(v.id));
+  const samples = (data.samples||[]).filter(matchFilters);
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+
+  document.getElementById("count").textContent =
+    `${samples.length} / ${(data.samples||[]).length} samples`;
+
+  if(!samples.length){
+    grid.innerHTML = `<div class="empty">No samples match. Clear the search or pick another accent.</div>`;
+    return;
+  }
+
+  for(const s of samples){
+    const card = document.createElement("article");
+    card.className = "card";
+
+    const head = document.createElement("div");
+    head.className = "card-head";
+    head.innerHTML =
+      `<span class="acc-badge acc-${s.accent||''}">${(s.accent||'—').replace(/_/g,' ')}</span>
+       <span class="stem" title="${s.stem||''}">${s.stem||''}</span>`;
+    card.appendChild(head);
+
+    const cap = document.createElement("p");
+    cap.className = "caption";
+    cap.textContent = s.caption || "(no caption)";
+    card.appendChild(cap);
+
+    const players = document.createElement("div");
+    players.className = "players";
+
+    // Ground truth pinned first
+    const gtRow = document.createElement("div");
+    gtRow.className = "row gt";
+    const gtTag = document.createElement("div");
+    gtTag.className = "tag";
+    gtTag.innerHTML = `<span class="lbl">Ground truth</span><span class="sub">reference</span>`;
+    gtRow.appendChild(gtTag);
+    if(s.gt_wav){ gtRow.appendChild(audioTag(AUDIO_BASE + s.gt_wav)); }
+    else{ const m=document.createElement("div"); m.className="missing"; m.textContent="no GT wav"; gtRow.appendChild(m); }
+    players.appendChild(gtRow);
+
+    // Model variants
+    for(const v of variants){
+      const file = (s.files||{})[v.id];
+      const row = document.createElement("div");
+      row.className = "row model";
+      const tag = document.createElement("div");
+      tag.className = "tag";
+      tag.innerHTML = `<span class="lbl">${v.model || v.id}</span><span class="sub">${fmtSteps(v.steps) || v.server || ''}</span>`;
+      row.appendChild(tag);
+      if(file){ row.appendChild(audioTag(AUDIO_BASE + file)); }
+      else{ const m=document.createElement("div"); m.className="missing"; m.textContent="—"; row.appendChild(m); }
+      players.appendChild(row);
+    }
+
+    card.appendChild(players);
+    grid.appendChild(card);
+  }
+}
+
+/* =========================================================================
+   Demo dataset — generated tones so the page is interactive with no files
+   ========================================================================= */
+function toneDataURI(freq, dur=0.5, sr=8000){
+  const n = Math.floor(dur*sr);
+  const buf = new ArrayBuffer(44 + n*2);
+  const dv = new DataView(buf);
+  const w = (o,s)=>{for(let i=0;i<s.length;i++)dv.setUint8(o+i,s.charCodeAt(i));};
+  w(0,"RIFF"); dv.setUint32(4,36+n*2,true); w(8,"WAVE"); w(12,"fmt ");
+  dv.setUint32(16,16,true); dv.setUint16(20,1,true); dv.setUint16(22,1,true);
+  dv.setUint32(24,sr,true); dv.setUint32(28,sr*2,true); dv.setUint16(32,2,true);
+  dv.setUint16(34,16,true); w(36,"data"); dv.setUint32(40,n*2,true);
+  for(let i=0;i<n;i++){
+    const env = Math.min(1, i/200, (n-i)/200);       // fade in/out
+    const v = Math.sin(2*Math.PI*freq*i/sr)*env*0.4;
+    dv.setInt16(44+i*2, v*32767, true);
+  }
+  let bin=""; const bytes=new Uint8Array(buf);
+  for(let i=0;i<bytes.length;i++) bin+=String.fromCharCode(bytes[i]);
+  return "data:audio/wav;base64,"+btoa(bin);
+}
+
+function buildDemo(){
+  const variants = [
+    {id:"syntacc-tornado-235Ksteps", model:"syntacc", server:"tornado", steps:235000, label:"syntacc 235K"},
+    {id:"syntacc-tornado-605Ksteps", model:"syntacc", server:"tornado", steps:605000, label:"syntacc 605K"},
+    {id:"syntacc-tornado-750Ksteps", model:"syntacc", server:"tornado", steps:750000, label:"syntacc 750K"},
+    {id:"yourtts-breeze-100Ksteps", model:"yourtts", server:"breeze", steps:100000, label:"yourtts 100K"},
+    {id:"yourtts-breeze-300Ksteps", model:"yourtts", server:"breeze", steps:300000, label:"yourtts 300K"},
+    {id:"yourtts-breeze-500Ksteps", model:"yourtts", server:"breeze", steps:500000, label:"yourtts 500K"},
+  ];
+  const mk = (stem, accent, caption, base, present)=>({
+    stem, accent, caption,
+    gt_wav: toneDataURI(base),
+    files: Object.fromEntries(variants.filter(v=>present.includes(v.id))
+      .map((v,i)=>[v.id, toneDataURI(base*(1.12+i*0.14))]))
+  });
+  return {
+    title:"Syntacc listening console",
+    subtitle:"Ground truth vs. model inference across training checkpoints. Press play on any row — only one clip plays at a time so you can A/B directly.",
+    generated_at:"demo",
+    dataset:{name:"NURC-TTS (demo)", language:"Portuguese (BR)", accents:["sao_paulo","recife"], hours:12.4, notes:"placeholder tones"},
+    variants,
+    models_meta:{
+      syntacc:{gpu:"1× RTX 4090 (demo)", ram:"64 GB", cpu:"24 threads"},
+      yourtts:{gpu:"1× A100 40GB (demo)", ram:"96 GB", cpu:"32 threads"},
+    },
+    samples:[
+      mk("NURC_RE_DID_001_Inf-ue_151_102.667_108.248","recife","você pode falar à vontade, conversar entre si",220,["syntacc-tornado-235Ksteps","syntacc-tornado-605Ksteps","syntacc-tornado-750Ksteps","yourtts-breeze-300Ksteps","yourtts-breeze-500Ksteps"]),
+      mk("SP_D2_015_007_12.400_18.900","sao_paulo","então a carpa é um mato um pouco maior, mais volumoso, né",262,["syntacc-tornado-235Ksteps","syntacc-tornado-750Ksteps","yourtts-breeze-100Ksteps","yourtts-breeze-500Ksteps"]),
+      mk("NURC_RE_DID_008_Inf1-ue_044_71.100_77.020","recife","é uma coisa mais ou menos assim, mamãe é quem faz",294,["syntacc-tornado-605Ksteps","syntacc-tornado-750Ksteps","yourtts-breeze-300Ksteps"]),
+      mk("SP_D2_015_012_40.100_46.550","sao_paulo","o gado de noite comia o capim e fabricava esterco",330,["syntacc-tornado-235Ksteps","syntacc-tornado-605Ksteps","syntacc-tornado-750Ksteps","yourtts-breeze-100Ksteps","yourtts-breeze-300Ksteps","yourtts-breeze-500Ksteps"]),
+    ]
+  };
+}
+
+/* =========================================================================
+   Boot
+   ========================================================================= */
+function closeAllDD(){
+  document.querySelectorAll(".dd.open").forEach(o=>{
+    o.classList.remove("open");
+    o.querySelector(".dd-btn").setAttribute("aria-expanded","false");
+  });
+}
+
+(async ()=>{
+  const {data, demo} = await loadData();
+  document.getElementById("modeTag").textContent = demo ? "demo mode" : "live";
+  document.getElementById("demoBanner").hidden = !demo;
+  render(data);
+  document.addEventListener("click", closeAllDD);
+  document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeAllDD(); });
+})();
+</script>
+</body>
+</html>
