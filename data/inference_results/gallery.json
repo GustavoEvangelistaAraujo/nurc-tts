@@ -1,0 +1,1182 @@
+{
+  "title": "Syntacc listening console",
+  "subtitle": "Ground truth vs. model inference across training checkpoints. Press play on any row — only one clip plays at a time so you can A/B directly.",
+  "generated_at": "2026-09-03 11:19",
+  "dataset": {
+    "name": "NURC-TTS",
+    "language": "Portuguese (BR)",
+    "accents": [
+      "sao_paulo",
+      "recife"
+    ],
+    "hours": null,
+    "notes": "São Paulo & Recife spontaneous speech"
+  },
+  "models_meta": {
+    "syntacc": {
+      "gpu": "1× NVIDIA A100 80GB",
+      "ram": "128 GB",
+      "cpu": "24 threads",
+      "notes": "YourTTS + SYNTACC text encoder"
+    }
+  },
+  "variants": [
+    {
+      "id": "syntacc-tornado-235Ksteps",
+      "model": "syntacc",
+      "server": "tornado",
+      "steps": 235000,
+      "label": "syntacc 235K"
+    },
+    {
+      "id": "syntacc-tornado-435Ksteps",
+      "model": "syntacc",
+      "server": "tornado",
+      "steps": 435000,
+      "label": "syntacc 435K"
+    },
+    {
+      "id": "syntacc-tornado-605Ksteps",
+      "model": "syntacc",
+      "server": "tornado",
+      "steps": 605000,
+      "label": "syntacc 605K"
+    },
+    {
+      "id": "syntacc-tornado-705Ksteps",
+      "model": "syntacc",
+      "server": "tornado",
+      "steps": 705000,
+      "label": "syntacc 705K"
+    },
+    {
+      "id": "syntacc-tornado-750Ksteps",
+      "model": "syntacc",
+      "server": "tornado",
+      "steps": 750000,
+      "label": "syntacc 750K"
+    }
+  ],
+  "samples": [
+    {
+      "stem": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248",
+      "accent": "recife",
+      "caption": "e posteriormente fui conduzido para a escola academia militar de agulhas negras",
+      "gt_wav": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248-gt.wav",
+      "gt_txt": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_001_Inf-ue_151_102.667_108.248-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495",
+      "accent": "recife",
+      "caption": "no lugar de ser um oficial de marinha me tornei um oficial do exército",
+      "gt_wav": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495-gt.wav",
+      "gt_txt": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_001_Inf-ue_200_243.659_247.495-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831",
+      "accent": "recife",
+      "caption": "mas nem todo conforto advém do progresso pelo menos é essa minha opinião",
+      "gt_wav": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831-gt.wav",
+      "gt_txt": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_001_Inf-ue_420_832.051_836.831-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554",
+      "accent": "recife",
+      "caption": "em primeiro lugar eu faria uma viagem à europa isso por uma razão muito simples",
+      "gt_wav": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554-gt.wav",
+      "gt_txt": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_001_Inf-ue_558_1149.132_1154.554-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569",
+      "accent": "recife",
+      "caption": "mas normalmente eu acho muito perigoso principalmente numa avenida que tem muito movimento",
+      "gt_wav": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569-gt.wav",
+      "gt_txt": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_001_Inf-ue_937_2148.897_2155.569-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457",
+      "accent": "recife",
+      "caption": "mas sempre estava em casa e lá eu sofri porque eu tive que sair e a água quase na cintura",
+      "gt_wav": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457-gt.wav",
+      "gt_txt": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_013_Inf-ue_335_58.972_64.457-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543",
+      "accent": "recife",
+      "caption": "agora nunca tinha visto as águas subirem tão depressa como eu vi",
+      "gt_wav": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543-gt.wav",
+      "gt_txt": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_013_Inf-ue_403_270.582_276.543-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36",
+      "accent": "recife",
+      "caption": "vou pra casa às vezes vou para o cinema às vezes vou pra casa de uma colega",
+      "gt_wav": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36-gt.wav",
+      "gt_txt": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_013_Inf-ue_653_1021.361_1026.36-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634",
+      "accent": "recife",
+      "caption": "eu almoço aqui mesmo na biblioteca trago o almoço de casa",
+      "gt_wav": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634-gt.wav",
+      "gt_txt": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_013_Inf-ue_676_1093.903_1097.634-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383",
+      "accent": "recife",
+      "caption": "às vezes se deixam muito levar pela fantasia eu mesma às vezes fui muitas vezes levada pela fantasia",
+      "gt_wav": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383-gt.wav",
+      "gt_txt": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_013_Inf-ue_978_2263.632_2269.383-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54",
+      "accent": "recife",
+      "caption": "a sala mesmo é num num sei assim o nome especial pra isso não",
+      "gt_wav": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54-gt.wav",
+      "gt_txt": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_025_Inf-ue_124_74.476_79.54-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799",
+      "accent": "recife",
+      "caption": "quer dizer pra divertimento é bom agora instrutivo não é não",
+      "gt_wav": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799-gt.wav",
+      "gt_txt": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_025_Inf-ue_176_383.461_387.799-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352",
+      "accent": "recife",
+      "caption": "a televisão universitária mesmo eu quase nunca assisto que é aqueles programas educativos num sei o quê",
+      "gt_wav": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352-gt.wav",
+      "gt_txt": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_025_Inf-ue_182_397.458_402.352-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839",
+      "accent": "recife",
+      "caption": "eu gostava demais no tempo em que o chacrinha não tinha cartaz eu gostava de assistir chacrina",
+      "gt_wav": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839-gt.wav",
+      "gt_txt": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_025_Inf-ue_190_421.197_425.839-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744",
+      "accent": "recife",
+      "caption": "anteontem mesmo eu fui assistir um filme gostei fui terminar quinze pras duas da madrugada",
+      "gt_wav": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744-gt.wav",
+      "gt_txt": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_025_Inf-ue_232_551.386_556.744-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922",
+      "accent": "recife",
+      "caption": "na minha opinião toda a ênfase devia ser dada a preparação a nível médio",
+      "gt_wav": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922-gt.wav",
+      "gt_txt": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_032_Inf-ue_1122_2614.962_2619.922-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73",
+      "accent": "recife",
+      "caption": "do ponto de vista de oportunidade então interrompendo aqui eu não sei dizer o que eu posso afirmar é que os nutri nutricionistas",
+      "gt_wav": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73-gt.wav",
+      "gt_txt": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_032_Inf-ue_760_1751.923_1758.73-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794",
+      "accent": "recife",
+      "caption": "mas há essa mentalidade ainda que na minha opinião precisa acabar",
+      "gt_wav": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794-gt.wav",
+      "gt_txt": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_032_Inf-ue_862_2014.752_2018.794-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552",
+      "accent": "recife",
+      "caption": "tudo aquilo que ele aprendeu na escola ele não está utilizando ele tá trabalhando num nível muito abaixo daquele",
+      "gt_wav": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552-gt.wav",
+      "gt_txt": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_032_Inf-ue_916_2144.776_2150.552-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004",
+      "accent": "recife",
+      "caption": "dificilmente colocaria um filho seu numa escola técnica porque aquilo ali vai ser o quê",
+      "gt_wav": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004-gt.wav",
+      "gt_txt": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_032_Inf-ue_953_2228.898_2234.004-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097",
+      "accent": "recife",
+      "caption": "teresopólis não tem grande coisa que você ver não só o comércio assim e fábricas",
+      "gt_wav": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097-gt.wav",
+      "gt_txt": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_037_Inf-ue_462_734.994_739.097-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865",
+      "accent": "recife",
+      "caption": "quer dizer em termos de ônibus tá havendo uma melhora muito grande do que tinha a uns dois anos atrás pra cá",
+      "gt_wav": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865-gt.wav",
+      "gt_txt": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_037_Inf-ue_650_1218.126_1223.865-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318",
+      "accent": "recife",
+      "caption": "apesar de fazer muito tempo que eu não vejo um bonde na minha vida mas ainda alcancei o bonde",
+      "gt_wav": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318-gt.wav",
+      "gt_txt": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_037_Inf-ue_715_1380.403_1386.318-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9",
+      "accent": "recife",
+      "caption": "eu acho que o pessoal toma muito da conta da vida dos outros por isso que eu não suporto",
+      "gt_wav": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9-gt.wav",
+      "gt_txt": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_037_Inf-ue_827_1658.624_1662.9-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444",
+      "accent": "recife",
+      "caption": "eu não acho que é bem sinalizado não mas não é das piores não poderia ser melhor",
+      "gt_wav": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444-gt.wav",
+      "gt_txt": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_037_Inf-ue_917_1853.536_1858.444-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849",
+      "accent": "recife",
+      "caption": "agora já papai não papai era um homem que não era moço",
+      "gt_wav": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849-gt.wav",
+      "gt_txt": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_044_Inf-ue_1240_1857.738_1861.849-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05",
+      "accent": "recife",
+      "caption": "era velha parece que ficou cega eu não cheguei a alcançar ela muito não",
+      "gt_wav": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05-gt.wav",
+      "gt_txt": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_044_Inf-ue_1271_1900.783_1905.05-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98",
+      "accent": "recife",
+      "caption": "para as alunas nessa festa papai foi e conheceu mamãe",
+      "gt_wav": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98-gt.wav",
+      "gt_txt": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_044_Inf-ue_1289_1935.848_1939.98-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262",
+      "accent": "recife",
+      "caption": "quando tem o rosto assim pequeno feito eu fica muito melhor mas o cabelo grande eu vejo mesmo",
+      "gt_wav": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262-gt.wav",
+      "gt_txt": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_044_Inf-ue_1398_2118.166_2123.262-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76",
+      "accent": "recife",
+      "caption": "acho bonito uma moça bem maquiada acho muito bonito mas eu mesmo não",
+      "gt_wav": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76-gt.wav",
+      "gt_txt": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_044_Inf-ue_1471_2233.575_2237.76-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421",
+      "accent": "recife",
+      "caption": "terminam absorvidos pelas elites todinhas e então os serviços que são feitos pra atender a todo mundo",
+      "gt_wav": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421-gt.wav",
+      "gt_txt": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_045_Inf-ue_209_582.801_588.421-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949",
+      "accent": "recife",
+      "caption": "a gente vai esclarecer a eles muita coisa e com isso é que eu vou responder a pergunta que ela fez",
+      "gt_wav": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949-gt.wav",
+      "gt_txt": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_045_Inf-ue_359_1055.292_1060.949-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382",
+      "accent": "recife",
+      "caption": "eu vi como é que o aluno realmente entra na universidade o que que ele espera encontrar",
+      "gt_wav": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382-gt.wav",
+      "gt_txt": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_045_Inf-ue_361_1061.65_1067.382-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607",
+      "accent": "recife",
+      "caption": "a gente é quem vai elaborar tudo aquilo que o monitor vai fazer é tirar uma oportunidade da gente criar",
+      "gt_wav": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607-gt.wav",
+      "gt_txt": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_045_Inf-ue_697_2191.444_2197.607-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073",
+      "accent": "recife",
+      "caption": "não como prestação de serviço porque prestação de serviço quem presta são as agências de desenvolvimento de serviço",
+      "gt_wav": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073-gt.wav",
+      "gt_txt": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_045_Inf-ue_743_2348.842_2354.073-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99",
+      "accent": "recife",
+      "caption": "na semana santa por exemplo você ligava o rádio e só ouvia musicas fúnebres",
+      "gt_wav": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99-gt.wav",
+      "gt_txt": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_058_Inf-ue_344_917.229_921.99-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182",
+      "accent": "recife",
+      "caption": "pessoal aproveita a semana santa pra sair da cidade você liga o rádio é tudo a mesma coisa",
+      "gt_wav": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182-gt.wav",
+      "gt_txt": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_058_Inf-ue_354_942.346_948.182-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868",
+      "accent": "recife",
+      "caption": "pra você tirar fotografia e cada fotografia linda foca nas naquelas pedras",
+      "gt_wav": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868-gt.wav",
+      "gt_txt": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_058_Inf-ue_433_1146.74_1151.868-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681",
+      "accent": "recife",
+      "caption": "mas geralmente elas têm saída você sempre chega em algum lugar",
+      "gt_wav": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681-gt.wav",
+      "gt_txt": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_058_Inf-ue_516_1390.864_1394.681-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824",
+      "accent": "recife",
+      "caption": "mas não sei se atualmente elas estão funcionando eu estive lá a tarde há pouco com o menino",
+      "gt_wav": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824-gt.wav",
+      "gt_txt": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "NURC_RE_DID_058_Inf-ue_706_1905.163_1910.824-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_014_SPEAKER_0_101_913.563_922.666",
+      "accent": "sao_paulo",
+      "caption": "agora que estão se localizando umas primeiras famílias japonesas mas eu tive a oportunidade de ver no hotel que a gente ainda come aquele tomate selvagem tomate pequenininho tudo isso quer dizer",
+      "gt_wav": "SP_DID_014_SPEAKER_0_101_913.563_922.666-gt.wav",
+      "gt_txt": "SP_DID_014_SPEAKER_0_101_913.563_922.666-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_014_SPEAKER_0_101_913.563_922.666-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_014_SPEAKER_0_101_913.563_922.666-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_014_SPEAKER_0_101_913.563_922.666-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_014_SPEAKER_0_101_913.563_922.666-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_014_SPEAKER_0_101_913.563_922.666-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_014_SPEAKER_0_111_991.48_996.303",
+      "accent": "sao_paulo",
+      "caption": "e só se encontra quase praticamente peixe vivo que ainda esteja se movimentando",
+      "gt_wav": "SP_DID_014_SPEAKER_0_111_991.48_996.303-gt.wav",
+      "gt_txt": "SP_DID_014_SPEAKER_0_111_991.48_996.303-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "SP_DID_014_SPEAKER_0_111_991.48_996.303-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_014_SPEAKER_0_111_991.48_996.303-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_014_SPEAKER_0_111_991.48_996.303-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_014_SPEAKER_0_111_991.48_996.303-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_014_SPEAKER_0_111_991.48_996.303-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402",
+      "accent": "sao_paulo",
+      "caption": "então todos os quartos têm as camas e têm as redes",
+      "gt_wav": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402-gt.wav",
+      "gt_txt": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_014_SPEAKER_0_147_1290.022_1294.402-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652",
+      "accent": "sao_paulo",
+      "caption": "essas quantidades atendiam as necessidades de anos anteriores locais",
+      "gt_wav": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652-gt.wav",
+      "gt_txt": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_014_SPEAKER_0_198_1705.672_1709.652-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_014_SPEAKER_0_81_755.33_762.993",
+      "accent": "sao_paulo",
+      "caption": "então a parte de hospedagem também é precaríssima e e se descuidar a pessoa fica ao relento",
+      "gt_wav": "SP_DID_014_SPEAKER_0_81_755.33_762.993-gt.wav",
+      "gt_txt": "SP_DID_014_SPEAKER_0_81_755.33_762.993-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_014_SPEAKER_0_81_755.33_762.993-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_014_SPEAKER_0_81_755.33_762.993-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_014_SPEAKER_0_81_755.33_762.993-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_014_SPEAKER_0_81_755.33_762.993-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_014_SPEAKER_0_81_755.33_762.993-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_023_SPEAKER_1_119_424.66_430.482",
+      "accent": "sao_paulo",
+      "caption": "então ela convocava a molecada da vizinhança e distribuía presentes no na véspera de natal",
+      "gt_wav": "SP_DID_023_SPEAKER_1_119_424.66_430.482-gt.wav",
+      "gt_txt": "SP_DID_023_SPEAKER_1_119_424.66_430.482-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_023_SPEAKER_1_119_424.66_430.482-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_023_SPEAKER_1_119_424.66_430.482-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_023_SPEAKER_1_119_424.66_430.482-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_023_SPEAKER_1_119_424.66_430.482-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_023_SPEAKER_1_119_424.66_430.482-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_023_SPEAKER_1_266_993.703_1002.369",
+      "accent": "sao_paulo",
+      "caption": "e foram alterados depois para eletricidade e tinham um sistema de pesos então eles eram lustres pesadíssimos mas pelo sistema de pesos podia baixar e levantar os lustres com um dedo quase",
+      "gt_wav": "SP_DID_023_SPEAKER_1_266_993.703_1002.369-gt.wav",
+      "gt_txt": "SP_DID_023_SPEAKER_1_266_993.703_1002.369-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_023_SPEAKER_1_266_993.703_1002.369-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_023_SPEAKER_1_266_993.703_1002.369-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_023_SPEAKER_1_266_993.703_1002.369-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_023_SPEAKER_1_266_993.703_1002.369-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_023_SPEAKER_1_266_993.703_1002.369-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_023_SPEAKER_1_50_77.882_84.826",
+      "accent": "sao_paulo",
+      "caption": "o quintal da casa de vovó era muito grande tinha mais ou menos quatro mil metros quadrados de terreno",
+      "gt_wav": "SP_DID_023_SPEAKER_1_50_77.882_84.826-gt.wav",
+      "gt_txt": "SP_DID_023_SPEAKER_1_50_77.882_84.826-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_023_SPEAKER_1_50_77.882_84.826-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_023_SPEAKER_1_50_77.882_84.826-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_023_SPEAKER_1_50_77.882_84.826-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_023_SPEAKER_1_50_77.882_84.826-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_023_SPEAKER_1_50_77.882_84.826-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395",
+      "accent": "sao_paulo",
+      "caption": "em frente a essa garagem era a lavanderia do lado esquerdo tinha um poço que não era usado",
+      "gt_wav": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395-gt.wav",
+      "gt_txt": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_023_SPEAKER_1_583_2210.205_2218.395-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375",
+      "accent": "sao_paulo",
+      "caption": "depois passando aquela entrada de novo tinha o terreno que dava pra roção do centro de paulo",
+      "gt_wav": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375-gt.wav",
+      "gt_txt": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_023_SPEAKER_1_614_2369.855_2375.375-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242",
+      "accent": "sao_paulo",
+      "caption": "não chega a ter cinquenta mas quase cinquenta de fundo e era a casa onde a gente morava quando era pequeno né",
+      "gt_wav": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242-gt.wav",
+      "gt_txt": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_027_SPEAKER_1_226_1605.482_1612.242-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372",
+      "accent": "sao_paulo",
+      "caption": "é chato cesárea não gosto e você fica acabada",
+      "gt_wav": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372-gt.wav",
+      "gt_txt": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_027_SPEAKER_1_310_2262.312_2269.372-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102",
+      "accent": "sao_paulo",
+      "caption": "esse meu filho por exemplo segundo é ao contrário do outro",
+      "gt_wav": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102-gt.wav",
+      "gt_txt": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_027_SPEAKER_1_334_2439.912_2444.102-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332",
+      "accent": "sao_paulo",
+      "caption": "e depois ele começa a ganhar maior desenvolvimento motor",
+      "gt_wav": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332-gt.wav",
+      "gt_txt": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_027_SPEAKER_1_357_2567.552_2573.332-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_027_SPEAKER_1_89_491.362_496.903",
+      "accent": "sao_paulo",
+      "caption": "e tem as duas caminhas dele e depois tem uma estante também no chão onde eles põem os brinquedos",
+      "gt_wav": "SP_DID_027_SPEAKER_1_89_491.362_496.903-gt.wav",
+      "gt_txt": "SP_DID_027_SPEAKER_1_89_491.362_496.903-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "SP_DID_027_SPEAKER_1_89_491.362_496.903-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_027_SPEAKER_1_89_491.362_496.903-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_027_SPEAKER_1_89_491.362_496.903-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_027_SPEAKER_1_89_491.362_496.903-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_027_SPEAKER_1_89_491.362_496.903-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983",
+      "accent": "sao_paulo",
+      "caption": "você passa eles te revistam depois você entra passa por uma por um portão central que ainda é um corredor no fim desse corredor tem o a grade final",
+      "gt_wav": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983-gt.wav",
+      "gt_txt": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_031_SPEAKER_1_272_1252.513_1260.983-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363",
+      "accent": "sao_paulo",
+      "caption": "acontece que como não havia espaço para que aquelas poltronas fossem grandes eles fizeram três poltronas pequenas",
+      "gt_wav": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363-gt.wav",
+      "gt_txt": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_031_SPEAKER_1_299_1382.983_1388.363-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663",
+      "accent": "sao_paulo",
+      "caption": "por exemplo lisboa madri se você for viajar de trem você leva vinte horas viajando",
+      "gt_wav": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663-gt.wav",
+      "gt_txt": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_031_SPEAKER_1_375_1743.703_1749.663-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273",
+      "accent": "sao_paulo",
+      "caption": "parece que os vagões que ficam na parte traseira do trem jogam mais com o efeito das curvas do trem",
+      "gt_wav": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273-gt.wav",
+      "gt_txt": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_031_SPEAKER_1_435_2024.253_2030.273-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063",
+      "accent": "sao_paulo",
+      "caption": "então esse chefe de trem é o que fica passeando ci circulando e verificando a ordem verificando se as pessoas estão dormindo se alguém precisa de alguma coisa",
+      "gt_wav": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063-gt.wav",
+      "gt_txt": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_031_SPEAKER_1_444_2099.883_2108.063-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589",
+      "accent": "sao_paulo",
+      "caption": "então se põe um cinto diferente ou faz muito contraste ou você não encaixa um tom que combine bem",
+      "gt_wav": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589-gt.wav",
+      "gt_txt": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_052_SPEAKER_1_256_1337.179_1342.589-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579",
+      "accent": "sao_paulo",
+      "caption": "não me deu essa sensação a agora em sensação de tempo eh eu tive uma experiência muito interessante",
+      "gt_wav": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579-gt.wav",
+      "gt_txt": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_052_SPEAKER_1_370_1910.459_1917.579-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699",
+      "accent": "sao_paulo",
+      "caption": "então na época certa que deve coincidir com algum rio que desemboca em algum lugar que provoca algum degelo alguma coisa então aparecem essas águas misteriosas que depois somem outra vez na areia",
+      "gt_wav": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699-gt.wav",
+      "gt_txt": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_052_SPEAKER_1_441_2243.219_2253.699-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309",
+      "accent": "sao_paulo",
+      "caption": "e na europa não como tem essa disposição bem nítida de de estação você tem a impressão que até o seu organismo se beneficia",
+      "gt_wav": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309-gt.wav",
+      "gt_txt": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_052_SPEAKER_1_464_2349.529_2357.309-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499",
+      "accent": "sao_paulo",
+      "caption": "o centro da espanha é árido o o centro da espanha é todo cor de terra entende",
+      "gt_wav": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499-gt.wav",
+      "gt_txt": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_052_SPEAKER_1_567_2751.519_2758.499-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_065_SPEAKER_0_130_69.759_75.503",
+      "accent": "sao_paulo",
+      "caption": "eu comecei dirigindo eu não tinha idade para entrar em autoescola então aprendi com meu pai por conta própria porque me interessava aham",
+      "gt_wav": "SP_DID_065_SPEAKER_0_130_69.759_75.503-gt.wav",
+      "gt_txt": "SP_DID_065_SPEAKER_0_130_69.759_75.503-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_065_SPEAKER_0_130_69.759_75.503-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_065_SPEAKER_0_130_69.759_75.503-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_065_SPEAKER_0_130_69.759_75.503-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_065_SPEAKER_0_130_69.759_75.503-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_065_SPEAKER_0_130_69.759_75.503-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_065_SPEAKER_0_298_744.522_749.364",
+      "accent": "sao_paulo",
+      "caption": "quiseram telefonar para o meu marido eu falei não deixa eu telefonar senão ele pensa que eu morri né",
+      "gt_wav": "SP_DID_065_SPEAKER_0_298_744.522_749.364-gt.wav",
+      "gt_txt": "SP_DID_065_SPEAKER_0_298_744.522_749.364-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_065_SPEAKER_0_298_744.522_749.364-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_065_SPEAKER_0_298_744.522_749.364-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_065_SPEAKER_0_298_744.522_749.364-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_065_SPEAKER_0_298_744.522_749.364-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_065_SPEAKER_0_298_744.522_749.364-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231",
+      "accent": "sao_paulo",
+      "caption": "então tinha que trocar por um carburador bom e não foi trocado porque é muito mais caro carburador bom",
+      "gt_wav": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231-gt.wav",
+      "gt_txt": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_065_SPEAKER_0_375_1107.421_1114.231-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861",
+      "accent": "sao_paulo",
+      "caption": "começou outro defeito geralmente quando a gente ia viajar se a gente ia para santos geralmente acontecia esse esse defeito",
+      "gt_wav": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861-gt.wav",
+      "gt_txt": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_065_SPEAKER_0_382_1133.461_1139.861-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511",
+      "accent": "sao_paulo",
+      "caption": "e quando funde o motor nem sempre precisa trocar isso é uma coisa que que assusta fundir o motor porque trocar o motor todo realmente é caro",
+      "gt_wav": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511-gt.wav",
+      "gt_txt": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_065_SPEAKER_0_595_1976.831_1984.511-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_102_SPEAKER_0_127_626.263_635.038",
+      "accent": "sao_paulo",
+      "caption": "tanto que hoje em dia três a zero é goleada e há uns tempos atrás eu acompanho o futebol desde moleque três a um era o resultado clássico de qualquer joguinho",
+      "gt_wav": "SP_DID_102_SPEAKER_0_127_626.263_635.038-gt.wav",
+      "gt_txt": "SP_DID_102_SPEAKER_0_127_626.263_635.038-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "SP_DID_102_SPEAKER_0_127_626.263_635.038-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_102_SPEAKER_0_127_626.263_635.038-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_102_SPEAKER_0_127_626.263_635.038-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_102_SPEAKER_0_127_626.263_635.038-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_102_SPEAKER_0_127_626.263_635.038-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_102_SPEAKER_0_152_728.051_733.856",
+      "accent": "sao_paulo",
+      "caption": "a gente corria com bicicleta emprestada até um certo ponto e de um ponto para frente teria que ser bicicleta da gente",
+      "gt_wav": "SP_DID_102_SPEAKER_0_152_728.051_733.856-gt.wav",
+      "gt_txt": "SP_DID_102_SPEAKER_0_152_728.051_733.856-gt.txt",
+      "files": {
+        "syntacc-tornado-605Ksteps": "SP_DID_102_SPEAKER_0_152_728.051_733.856-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_102_SPEAKER_0_152_728.051_733.856-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_102_SPEAKER_0_152_728.051_733.856-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_102_SPEAKER_0_152_728.051_733.856-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_102_SPEAKER_0_152_728.051_733.856-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_102_SPEAKER_0_195_985.951_991.494",
+      "accent": "sao_paulo",
+      "caption": "geralmente eles dividem o campo em duas partes um que defende a frente e outro que defende o fundo",
+      "gt_wav": "SP_DID_102_SPEAKER_0_195_985.951_991.494-gt.wav",
+      "gt_txt": "SP_DID_102_SPEAKER_0_195_985.951_991.494-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_102_SPEAKER_0_195_985.951_991.494-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_102_SPEAKER_0_195_985.951_991.494-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_102_SPEAKER_0_195_985.951_991.494-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_102_SPEAKER_0_195_985.951_991.494-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_102_SPEAKER_0_195_985.951_991.494-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059",
+      "accent": "sao_paulo",
+      "caption": "diz até que com essa prática pode sarar de asma bronquite e outras coisas que são deficiência da forma da pessoa respirar",
+      "gt_wav": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059-gt.wav",
+      "gt_txt": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_102_SPEAKER_0_295_1517.579_1525.059-syntacc-tornado-235Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_102_SPEAKER_0_74_257.125_267.613",
+      "accent": "sao_paulo",
+      "caption": "como você disse que a torcida do são paulo é torcida de de último momento de decisão do campeonato e se estiver bem favorável para ele se estiver mais ou menos a torcida já não tem tanto entusiasmo",
+      "gt_wav": "SP_DID_102_SPEAKER_0_74_257.125_267.613-gt.wav",
+      "gt_txt": "SP_DID_102_SPEAKER_0_74_257.125_267.613-gt.txt",
+      "files": {
+        "syntacc-tornado-435Ksteps": "SP_DID_102_SPEAKER_0_74_257.125_267.613-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_102_SPEAKER_0_74_257.125_267.613-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_102_SPEAKER_0_74_257.125_267.613-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_102_SPEAKER_0_74_257.125_267.613-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_102_SPEAKER_0_74_257.125_267.613-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_110_SPEAKER_0_115_409.901_417.967",
+      "accent": "sao_paulo",
+      "caption": "possibilidade de transporte de maior número de pessoas que não é o caso mas sempre em linhas gerais apresenta essa vantagem",
+      "gt_wav": "SP_DID_110_SPEAKER_0_115_409.901_417.967-gt.wav",
+      "gt_txt": "SP_DID_110_SPEAKER_0_115_409.901_417.967-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_110_SPEAKER_0_115_409.901_417.967-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_110_SPEAKER_0_115_409.901_417.967-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_110_SPEAKER_0_115_409.901_417.967-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_110_SPEAKER_0_115_409.901_417.967-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_110_SPEAKER_0_115_409.901_417.967-syntacc-tornado-605Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_110_SPEAKER_0_128_534.867_541.772",
+      "accent": "sao_paulo",
+      "caption": "esse é um diferencial de poucos centímetros e de um carro grande é de um metro e tanto dois metros em geral de comprimento",
+      "gt_wav": "SP_DID_110_SPEAKER_0_128_534.867_541.772-gt.wav",
+      "gt_txt": "SP_DID_110_SPEAKER_0_128_534.867_541.772-gt.txt",
+      "files": {
+        "syntacc-tornado-750Ksteps": "SP_DID_110_SPEAKER_0_128_534.867_541.772-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_110_SPEAKER_0_128_534.867_541.772-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_110_SPEAKER_0_128_534.867_541.772-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_110_SPEAKER_0_128_534.867_541.772-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_110_SPEAKER_0_128_534.867_541.772-syntacc-tornado-705Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_110_SPEAKER_0_188_986.37_992.116",
+      "accent": "sao_paulo",
+      "caption": "e no ônibus tem essa facilidade de poder travar amizade com o vizinho de banco",
+      "gt_wav": "SP_DID_110_SPEAKER_0_188_986.37_992.116-gt.wav",
+      "gt_txt": "SP_DID_110_SPEAKER_0_188_986.37_992.116-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_110_SPEAKER_0_188_986.37_992.116-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_110_SPEAKER_0_188_986.37_992.116-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_110_SPEAKER_0_188_986.37_992.116-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_110_SPEAKER_0_188_986.37_992.116-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_110_SPEAKER_0_188_986.37_992.116-syntacc-tornado-435Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488",
+      "accent": "sao_paulo",
+      "caption": "se for alguma vela que esteja suja então é fácil desemparafusar a vela limpar e recolocar",
+      "gt_wav": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488-gt.wav",
+      "gt_txt": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488-gt.txt",
+      "files": {
+        "syntacc-tornado-235Ksteps": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488-syntacc-tornado-235Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-705Ksteps": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_110_SPEAKER_0_286_1679.878_1687.488-syntacc-tornado-750Ksteps.wav"
+      }
+    },
+    {
+      "stem": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728",
+      "accent": "sao_paulo",
+      "caption": "aqueles vagões que transportam mercadorias muitas vezes transportam gado e são totalmente fechados",
+      "gt_wav": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728-gt.wav",
+      "gt_txt": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728-gt.txt",
+      "files": {
+        "syntacc-tornado-705Ksteps": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728-syntacc-tornado-705Ksteps.wav",
+        "syntacc-tornado-750Ksteps": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728-syntacc-tornado-750Ksteps.wav",
+        "syntacc-tornado-435Ksteps": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728-syntacc-tornado-435Ksteps.wav",
+        "syntacc-tornado-605Ksteps": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728-syntacc-tornado-605Ksteps.wav",
+        "syntacc-tornado-235Ksteps": "SP_DID_110_SPEAKER_0_360_2198.848_2205.728-syntacc-tornado-235Ksteps.wav"
+      }
+    }
+  ]
+}
